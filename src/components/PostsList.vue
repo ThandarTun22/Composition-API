@@ -12,12 +12,7 @@ export default {
   components: { SinglePost },
     props: ["posts"],
     setup(props){
-        // console.log(props.posts[0].title)
-        onMounted(()=>{
-            console.log("component mounted");
-        }),
-        onUnmounted(()=> console.log("component unmounted"));
-        onUpdated(()=> console.log("data updated"));
+  
     }
 }
 </script>
