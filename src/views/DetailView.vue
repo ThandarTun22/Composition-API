@@ -5,13 +5,15 @@
     <p>{{post.body}}</p>
   </div>
   <div v-else>
-    loading ....
+    <SpinnerLoad></SpinnerLoad>
   </div>
 </template>
 
 <script>
+import SpinnerLoad from '../components/SpinnerLoad'
 import getPost from "../composables/getPost"
 export default {
+  components: { SpinnerLoad },
     props : ["id"],
     setup(props){
         let {post, error, load} = getPost(props.id);  //{post, error, load}
