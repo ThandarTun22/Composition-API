@@ -19,8 +19,10 @@
 
 <script>
 import { ref } from 'vue'
+import {useRouter} from 'vue-router'
 export default {
     setup(){
+        let router = useRouter()  // this.$router
         let title = ref("");
         let body = ref("");
         let tag = ref("");
@@ -43,9 +45,9 @@ export default {
                     body: body.value,  //""
                     tags: tags.value  //[]
                 })
-            })
-
-            
+            })// end await
+            // redirect user to home page
+            router.push("/")          
         }
 
         return {title, body, tag, handleKeydown, tags, addPost}
